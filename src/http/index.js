@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_URL_CONST = 'http://localhost:7000/api'
+export const API_URL_CONST = 'https://union-network.herokuapp.com//api'
 const $api = axios.create({
     withCredentials: true,
     baseURL: API_URL_CONST,
