@@ -57,7 +57,7 @@ export default function RegistrationForm(){
                     Create new account
                 </Typography>
                 <Box component="form"
-                     onSubmit={handleLogin}
+                     onSubmit={handleSubmit}
                      noValidate
                      sx={{ mt: 2 }}>
                     <TextField
