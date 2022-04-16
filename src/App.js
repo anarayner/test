@@ -23,13 +23,6 @@ function App() {
       <BrowserRouter>
       <ThemeProvider theme={theme}>
           <AlertDialog/>
-          {user.isLoading?
-              <CircularProgress sx={style}
-              />
-              :
-              <AppRouter/>
-          }
-
       </ThemeProvider>
       </BrowserRouter>
   );

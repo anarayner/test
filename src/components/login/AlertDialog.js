@@ -3,6 +3,7 @@ import {CircularProgress, Fade, Snackbar} from '@mui/material';
 import {Context} from '../../index';
 import {observer} from 'mobx-react-lite';
 import Spinner from '../UI/Spinner'
+import AppRouter from '../AppRoutes';
 
 
 function AlertDialog() {
@@ -55,6 +56,12 @@ function AlertDialog() {
                         key={state.Transition.name}
                     />
                 </>
+            }
+            {user.isLoading?
+                <CircularProgress sx={style}
+                />
+                :
+                <AppRouter/>
             }
 
         </>
