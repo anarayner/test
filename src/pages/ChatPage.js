@@ -23,7 +23,7 @@ const ChatPage = observer(() => {
     const [messages, setMessages] = useState(null)
     const [newMessage, setNewMessages] = useState('')
     const [receivedMessage, setReceivedMessages] = useState('')
-    const socket = useRef(io('ws://localhost:7000'))
+    const socket = useRef(io('ws://union-network.herokuapp.com'))
     useEffect(()=>{
         socket.current.emit('connectUser', user.user.id)
         socket.current.on('users',user=>{

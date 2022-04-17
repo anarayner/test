@@ -16,7 +16,7 @@ $api.interceptors.response.use(config=>{
 }, async error => {
     error.config._isRetry = false
     const originalRequest = error.config
-    if (error.response.status === 404 && error.config && !error.config._isRetry) {
+    if (error.response.status === 401 && error.config && !error.config._isRetry) {
         error.config._isRetry = true
         try{
             const response = await axios.get (`${API_URL_CONST}/auth/refresh`, {withCredentials: true})
