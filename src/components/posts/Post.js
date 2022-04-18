@@ -15,7 +15,7 @@ import {useNavigate} from 'react-router-dom';
 import {USER_ROUTE} from '../../util/consts';
 
 const Post = ({post}) => {
-    const {user} = useContext(Context)ci
+    const {user} = useContext(Context)
     const navigate = useNavigate()
 
     console.log(post)
