@@ -26,11 +26,6 @@ export default function RegistrationForm(){
 
     function register (){ user.registration(values.username, values.email, values.password).then(()=> navigate(LOGIN_ROUTE))
     }
-    const handleLogin = (e)=>{
-        e.preventDefault();
-        handleSubmit(e)
-        navigate(LOGIN_ROUTE)
-    }
 
     return (
         <Card sx={{

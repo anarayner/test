@@ -11,7 +11,7 @@ import {Box} from '@mui/material';
 import ItemMenu from './ItemMenu';
 
 const Post = ({post}) => {
-
+console.log(post)
     return (
         <Card sx={{borderRadius: 2, mt: 2}}>
             <CardHeader
