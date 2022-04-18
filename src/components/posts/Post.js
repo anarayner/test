@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,23 +7,33 @@ import Typography from '@mui/material/Typography';
 import Moment from 'react-moment';
 import {observer} from 'mobx-react';
 import PostComments from './PostComments';
-import {Box} from '@mui/material';
+import {Box, Grid} from '@mui/material';
 import ItemMenu from './ItemMenu';
+import {Context} from '../../index';
 
 const Post = ({post}) => {
+    const {user} = useContext(Context)
 console.log(post)
     return (
         <Card sx={{borderRadius: 2, mt: 2}}>
-            <CardHeader
-                avatar={
-                    <Avatar src={process.env.REACT_APP_API_URL + post.userId.profilePicture}/>
+            <Grid container spacing={2} direction='row'  >
+                <Grid item xs={8} sm={9} md={10} lg={10.5}>
+                    <CardHeader
+                        avatar={
+                            <Avatar src={process.env.REACT_APP_API_URL + post.userId.profilePicture}/>
+                        }
+                        title={post.userId.username}
+                        subheader={<Moment fromNow>{post.createdAt}</Moment>}
+                    />
+                </Grid>
+                {user.user.id === post.userId._id?
+                    <Grid item xs={4} sm={3} md={2} lg={1.5}>
+                        <ItemMenu  props={post}/>
+                    </Grid>
+                    :
+                    <></>
                 }
-                action={
-                        <ItemMenu props={post}/>
-                }
-                title={post.userId.username}
-                subheader={<Moment fromNow>{post.createdAt}</Moment>}
-            />
+            </Grid>
             {post.img?
                 <CardMedia
                     component="img"
