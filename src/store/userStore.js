@@ -37,7 +37,7 @@ export default class userStore{
             this.setUser(response.data.user)
 
         }catch (e) {
-            console.log('e', e)
+            console.log('e', e.response)
             alert(e.response?.data?.message)
         }
     }
