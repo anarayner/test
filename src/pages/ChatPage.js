@@ -17,7 +17,7 @@ import {io} from 'socket.io-client'
 import MessagesList from '../components/chat/MessagesList';
 
 const ChatPage = observer(() => {
-    const {user} = useContext(Context);
+    const {user, notification} = useContext(Context);
     const [conversations, setConversations] = useState([])
     const [currentConversation, setCurrentConversation] = useState(null)
     const [messages, setMessages] = useState(null)
@@ -30,11 +30,12 @@ const ChatPage = observer(() => {
         })
     },[user, socket])
 
-
+console.log(notification.notification.length)
     useEffect(()=>{
 
         socket.current.on('receive_message', data => {
             console.log('data: ', data)
+            notification.add(data)
                 setReceivedMessages({
                     receiverId: data.receiverId,
                     sender: data.sender,
