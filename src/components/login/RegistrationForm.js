@@ -24,11 +24,11 @@ export default function RegistrationForm(){
         handleSubmit,
     } = useForm(register, validate);
 
-    function register (){ user.registration(values.username, values.email, values.password)
+    function register (){ user.registration(values.username, values.email, values.password).then(()=> alert('Success!'))
     }
     const handleLogin = (e)=>{
         e.preventDefault();
-        handleSubmit()
+        handleSubmit(e)
         navigate(LOGIN_ROUTE)
     }
 
@@ -57,7 +57,7 @@ export default function RegistrationForm(){
                     Create new account
                 </Typography>
                 <Box component="form"
-                     onSubmit={handleSubmit}
+                     onSubmit={handleLogin}
                      noValidate
                      sx={{ mt: 2 }}>
                     <TextField
