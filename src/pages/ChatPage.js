@@ -56,6 +56,7 @@ const ChatPage = observer(() => {
 
     useEffect(()=>{
         console.log(currentConversation)
+        console.log(currentConversation.members.includes(receivedMessage.receiverId))
 
         console.log(receivedMessage)
        receivedMessage &&
