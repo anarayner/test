@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Moment from 'react-moment';
 import {observer} from 'mobx-react';
 import {Divider, ListItem, ListItemAvatar, ListItemText} from '@mui/material';
 import ItemMenuComment from './ItemMenuComment';
+import {Context} from '../../index';
 
 const Comment = ({comment, postComments}) => {
     const {user} = useContext(Context)
