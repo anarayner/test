@@ -13,6 +13,7 @@ import {Context} from '../../index';
 import ListItemButton from '@mui/material/ListItemButton';
 import {useNavigate} from 'react-router-dom';
 import {USER_ROUTE} from '../util/consts';
+import Button from '@mui/material/Button';
 
 const Post = ({post}) => {
     const {user} = useContext(Context)
@@ -23,7 +24,7 @@ const Post = ({post}) => {
         <Card sx={{borderRadius: 2, mt: 2}}>
             <Grid container spacing={2} direction='row'  >
                 <Grid item xs={8} sm={9} md={10} lg={10.5}>
-                    <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
+                    <Button onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
                     <CardHeader
                         avatar={
                             <Avatar src={process.env.REACT_APP_API_URL + post.userId.profilePicture}/>
@@ -31,7 +32,7 @@ const Post = ({post}) => {
                         title={post.userId.username}
                         subheader={<Moment fromNow>{post.createdAt}</Moment>}
                     />
-                    </ListItemButton>
+                    </Button>
                 </Grid>
                 {user.user.id === post.userId._id?
                     <Grid item xs={4} sm={3} md={2} lg={1.5}>
