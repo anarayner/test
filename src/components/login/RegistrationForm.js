@@ -57,7 +57,7 @@ export default function RegistrationForm(){
                     Create new account
                 </Typography>
                 <Box component="form"
-                     onSubmit={handleLogin}
+                     onSubmit={handleSubmit}
                      noValidate
                      sx={{ mt: 2 }}>
                     <TextField
@@ -105,7 +105,7 @@ export default function RegistrationForm(){
                         error={Boolean(errors?.password)}
                         helperText={(errors?.password)}
                     />
-
+                    <NavLink to={LOGIN_ROUTE}>
                     <Button
                         type="submit"
                         fullWidth
@@ -116,7 +116,7 @@ export default function RegistrationForm(){
                     >
                         Sign up
                     </Button>
-
+                    </NavLink>
                     <Grid item xs={12} sx={{ mt: 2, mb: 1}}
                     >
                         <Divider />
