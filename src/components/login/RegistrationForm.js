@@ -24,7 +24,7 @@ export default function RegistrationForm(){
         handleSubmit,
     } = useForm(register, validate);
 
-    function register (){ user.registration(values.username, values.email, values.password).then(()=> alert('Success!'))
+    function register (){ user.registration(values.username, values.email, values.password).then(()=> navigate(LOGIN_ROUTE))
     }
     const handleLogin = (e)=>{
         e.preventDefault();
@@ -105,7 +105,7 @@ export default function RegistrationForm(){
                         error={Boolean(errors?.password)}
                         helperText={(errors?.password)}
                     />
-                    <NavLink to={LOGIN_ROUTE}>
+
                     <Button
                         type="submit"
                         fullWidth
@@ -116,7 +116,7 @@ export default function RegistrationForm(){
                     >
                         Sign up
                     </Button>
-                    </NavLink>
+
                     <Grid item xs={12} sx={{ mt: 2, mb: 1}}
                     >
                         <Divider />
