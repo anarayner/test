@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import { Box, Divider, List, Toolbar} from '@mui/material';
+import {Badge, Box, Divider, List, Toolbar} from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../../theme';
@@ -73,7 +73,7 @@ const ButtonIcon = styled(IconButton,{})({
 const SideBar = () => {
     const navigate = useNavigate()
 
-    const {user} = useContext(Context)
+    const {user,notification} = useContext(Context)
     const[open, setOpen] = useState(true)
     const toggleDrawer = () =>{
         setOpen(!open)
@@ -99,9 +99,9 @@ const SideBar = () => {
                                 color: theme.palette.common.white,
                                 mr:2
                             }}>
-                            {/*<Badge badgeContent={4} color="error">*/}
+                            <Badge badgeContent={notification.notification.length} color="error">
                                 <MailIcon />
-                            {/*</Badge>*/}
+                            </Badge>
                         </ButtonIcon>
                         <ButtonIcon
                             onClick={() => navigate(FEED_ROUTE)}
