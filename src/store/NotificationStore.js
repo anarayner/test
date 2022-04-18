@@ -14,7 +14,11 @@ export default class NotificationStore{
         return this._notification
     }
 
-    add(not){
-        this.notification.push(not)
+    add(notification){
+        this.notification.push(notification)
+    }
+    remove(notification){
+        const filteredNotification = this.notification.filter(post => post._id !== id)
+        this._posts = filteredNotification
     }
 }

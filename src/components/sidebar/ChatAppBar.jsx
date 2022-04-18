@@ -19,7 +19,7 @@ const ButtonIcon = styled(IconButton,{})({
 
 const ChatAppBar = () => {
     const navigate = useNavigate()
-    const {user} = useContext(Context)
+    const {user, notification} = useContext(Context)
 
     return (
         <AppBar position='fixed' >
@@ -40,9 +40,9 @@ const ChatAppBar = () => {
                             color: theme.palette.common.white,
                             mr:2
                         }}>
-                        {/*<Badge badgeContent={4} color="error">*/}
+                        <Badge badgeContent={notification.notification.length} color="error">
                             <MailIcon />
-                        {/*</Badge>*/}
+                        </Badge>
                     </ButtonIcon>
                     <ButtonIcon
                         aria-label="show 4 new mails"
