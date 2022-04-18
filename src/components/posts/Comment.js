@@ -7,6 +7,7 @@ import {Divider, ListItem, ListItemAvatar, ListItemText} from '@mui/material';
 import ItemMenuComment from './ItemMenuComment';
 
 const Comment = ({comment, postComments}) => {
+    const {user} = useContext(Context)
 
     return (
         <>
@@ -30,7 +31,11 @@ const Comment = ({comment, postComments}) => {
                     </React.Fragment>
                 }
             />
-            <ItemMenuComment comment={comment} postComments={postComments}/>
+            {user.user.id === comment.userId._id ?
+                <ItemMenuComment comment={comment} postComments={postComments}/>
+                :
+                <></>
+            }
 
         </ListItem>
     <Divider variant="inset"  />
