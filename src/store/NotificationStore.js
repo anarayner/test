@@ -18,7 +18,6 @@ export default class NotificationStore{
         this.notification.push(notification)
     }
     remove(notification){
-        const filteredNotification = this.notification.filter(post => post._id !== id)
-        this._posts = filteredNotification
+         this._notification = []
     }
 }
