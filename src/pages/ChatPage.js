@@ -35,6 +35,7 @@ const ChatPage = observer(() => {
         socket.current.on('receive_message', data => {
             console.log('data: ', data)
             setReceivedMessages({
+                receiverId: data.receiverId,
                 sender: data.sender,
                 content: data.content,
                 conversationsId: data.conversationsId,
