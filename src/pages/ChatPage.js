@@ -35,8 +35,6 @@ const ChatPage = observer(() => {
 
         socket.current.on('receive_message', data => {
             console.log('data: ', data)
-            console.log(currentConversation)
-            if(currentConversation){
                 setReceivedMessages({
                     receiverId: data.receiverId,
                     sender: data.sender,
@@ -46,7 +44,6 @@ const ChatPage = observer(() => {
                     createdAt: Date.now(),
                     _id: Date.now(),
                 })
-            }
 
         })
     },[])
@@ -58,6 +55,8 @@ const ChatPage = observer(() => {
     },[])
 
     useEffect(()=>{
+        console.log(currentConversation)
+
         console.log(receivedMessage)
        receivedMessage &&
            setMessages(prev => [...prev, receivedMessage])
