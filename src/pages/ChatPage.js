@@ -30,19 +30,24 @@ const ChatPage = observer(() => {
         })
     },[user, socket])
 
-console.log(currentConversation)
+
     useEffect(()=>{
+
         socket.current.on('receive_message', data => {
             console.log('data: ', data)
-            setReceivedMessages({
-                receiverId: data.receiverId,
-                sender: data.sender,
-                content: data.content,
-                conversationsId: data.conversationsId,
-                profilePicture: data.sender.profilePicture,
-                createdAt: Date.now(),
-                _id: Date.now(),
-            })
+            console.log(currentConversation.members.includes(data.receiverId))
+            if(currentConversation){
+                setReceivedMessages({
+                    receiverId: data.receiverId,
+                    sender: data.sender,
+                    content: data.content,
+                    conversationsId: data.conversationsId,
+                    profilePicture: data.sender.profilePicture,
+                    createdAt: Date.now(),
+                    _id: Date.now(),
+                })
+            }
+
         })
     },[])
 
