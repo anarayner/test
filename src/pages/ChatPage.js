@@ -30,7 +30,7 @@ const ChatPage = observer(() => {
         })
     },[user, socket])
 
-
+console.log(currentConversation)
     useEffect(()=>{
         socket.current.on('receive_message', data => {
             console.log('data: ', data)
