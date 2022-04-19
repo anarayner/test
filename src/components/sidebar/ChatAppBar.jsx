@@ -37,7 +37,7 @@ const ChatAppBar = () => {
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                     <ButtonIcon
                         onClick={() =>
-                            notification.remove().then(navigate(CHAT_ROUTE))
+                            navigate(CHAT_ROUTE)
                     }
                         sx={{backgroundColor: theme.palette.primary.main,
                             color: theme.palette.common.white,

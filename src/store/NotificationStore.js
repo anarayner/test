@@ -17,7 +17,7 @@ export default class NotificationStore{
     add(notification){
         this.notification.push(notification)
     }
-    remove(notification){
+    remove(){
          this._notification = []
     }
 }
