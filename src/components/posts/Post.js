@@ -25,9 +25,7 @@ const Post = ({post}) => {
             <Grid container spacing={2} direction='row'  >
                 <Grid item xs={8} sm={9} md={10} lg={10.5}>
                     <ListItemButton
-                        sx={{color:theme.palette.common.white,
-                            backgroundColor: theme.palette.common.white, '&:hover': {
-                                color: theme.palette.common.white,
+                        sx={{backgroundColor: theme.palette.common.white, '&:hover': {
                                 backgroundColor: theme.palette.common.white}}}
                         onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
                     <CardHeader
