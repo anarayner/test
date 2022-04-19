@@ -21,7 +21,9 @@ const Comment = ({comment, postComments}) => {
         <>
         <ListItem alignItems="flex-start">
             <ListItemButton
-                sx={{'&:hover': {
+                sx={{color:theme.palette.common.white,
+                    backgroundColor: theme.palette.common.white, '&:hover': {
+                    color: theme.palette.common.white,
                         backgroundColor: theme.palette.common.white}}}
                 onClick={() => navigate(USER_ROUTE +'/' + comment.userId._id)} >
 
