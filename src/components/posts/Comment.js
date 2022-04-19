@@ -6,6 +6,7 @@ import {observer} from 'mobx-react';
 import {Divider, ListItem, ListItemAvatar, ListItemText} from '@mui/material';
 import ItemMenuComment from './ItemMenuComment';
 import {Context} from '../../index';
+import {USER_ROUTE} from '../../util/consts';
 
 const Comment = ({comment, postComments}) => {
     const {user} = useContext(Context)
@@ -13,9 +14,12 @@ const Comment = ({comment, postComments}) => {
     return (
         <>
         <ListItem alignItems="flex-start">
+            <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
+
             <ListItemAvatar>
                 <Avatar src={process.env.REACT_APP_API_URL + comment.userId.profilePicture}/>
             </ListItemAvatar>
+            </ListItemButton>
             <ListItemText
                 primary={comment.userId.username}
                 secondary={

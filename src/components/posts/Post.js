@@ -23,16 +23,17 @@ const Post = ({post}) => {
         <Card sx={{borderRadius: 2, mt: 2}}>
             <Grid container spacing={2} direction='row'  >
                 <Grid item xs={8} sm={9} md={10} lg={10.5}>
-
+                    <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
                     <CardHeader
                         avatar={
-                            <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
+
                             <Avatar src={process.env.REACT_APP_API_URL + post.userId.profilePicture}/>
-                            </ListItemButton>
+
                         }
                         title={post.userId.username}
                         subheader={<Moment fromNow>{post.createdAt}</Moment>}
                     />
+                    </ListItemButton>
                 </Grid>
                 {user.user.id === post.userId._id?
                     <Grid item xs={4} sm={3} md={2} lg={1.5}>
