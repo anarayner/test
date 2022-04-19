@@ -28,7 +28,7 @@ const Post = ({post}) => {
                     <CardHeader
                         avatar={
                             <ListItemButton
-                                sx={{color:theme.palette.common.white,
+                                sx={{p: 0, color:theme.palette.common.white,
                                     backgroundColor: theme.palette.common.white, '&:hover': {
                                         color: theme.palette.common.white,
                                         backgroundColor: theme.palette.common.white}}}
