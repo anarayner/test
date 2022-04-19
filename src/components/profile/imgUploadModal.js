@@ -31,14 +31,14 @@ export default function ImgUploadModal() {
 
     const [file, setFile] = useState(null)
     const selectFile = (e) => {
-        setFile(e.target.files[0])
-    }
-    const {id} = useParams()
-    const addImage = ()=>{
         const imageURL = file.toDataURL('image/jpg')
         const convertedURLtoFile = dataURLtoFile(imageURL, 'image.jpg')
         console.log(imageURL)
         console.log(convertedURLtoFile)
+        setFile(e.target.files[0])
+    }
+    const {id} = useParams()
+    const addImage = ()=>{
         const formData = new FormData()
         formData.append('profilePicture', file)
         currentUser.uploadProfilePicture(id, formData).then((data) => setOpen(false))
