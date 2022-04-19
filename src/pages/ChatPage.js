@@ -56,7 +56,7 @@ const ChatPage = observer(() => {
         console.log(currentConversation)
 
         console.log(receivedMessage)
-       receivedMessage && currentConversation?.members.includes(receivedMessage.sender) &&
+       receivedMessage && currentConversation?.members.find(({_id}) => _id === receivedMessage.sender) &&
            setMessages(prev => [...prev, receivedMessage])
     }, [receivedMessage])
 
