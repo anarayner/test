@@ -7,6 +7,7 @@ import {useParams} from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import {PhotoCamera} from '@material-ui/icons';
 import {Context} from '../../index';
+import {dataURLtoFile} from '../../util/dataURLtoFile';
 
 const style = {
     position: 'absolute',
@@ -34,6 +35,10 @@ export default function ImgUploadModal() {
     }
     const {id} = useParams()
     const addImage = ()=>{
+        const imageURL = file.toDataURL('image/jpg')
+        const convertedURLtoFile = dataURLtoFile(imageURL, 'image.jpg')
+        console.log(imageURL)
+        console.log(convertedURLtoFile)
         const formData = new FormData()
         formData.append('profilePicture', file)
         currentUser.uploadProfilePicture(id, formData).then((data) => setOpen(false))
@@ -53,7 +58,7 @@ export default function ImgUploadModal() {
                 <Box sx={style}>
                     <form>
 
-                <input type='file' onChange={selectFile} style={{fontSize: 'medium'}}/>
+                <input type='file' accept='image/*' onChange={selectFile} style={{fontSize: 'medium'}}/>
                         <Button variant='contained' disabled={!file} onClick={addImage}> Upload</Button>
                     </form>
                 </Box>
