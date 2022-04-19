@@ -13,6 +13,7 @@ import {Context} from '../../index';
 import ListItemButton from '@mui/material/ListItemButton';
 import {useNavigate} from 'react-router-dom';
 import {USER_ROUTE} from '../../util/consts';
+import theme from '../../theme';
 
 const Post = ({post}) => {
     const {user} = useContext(Context)
@@ -23,12 +24,15 @@ const Post = ({post}) => {
         <Card sx={{borderRadius: 2, mt: 2}}>
             <Grid container spacing={2} direction='row'  >
                 <Grid item xs={8} sm={9} md={10} lg={10.5}>
-                    <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
+                    <ListItemButton
+                        sx={{color:theme.palette.common.white,
+                            backgroundColor: theme.palette.common.white, '&:hover': {
+                                color: theme.palette.common.white,
+                                backgroundColor: theme.palette.common.white}}}
+                        onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
                     <CardHeader
                         avatar={
-
                             <Avatar src={process.env.REACT_APP_API_URL + post.userId.profilePicture}/>
-
                         }
                         title={post.userId.username}
                         subheader={<Moment fromNow>{post.createdAt}</Moment>}
