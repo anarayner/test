@@ -5,7 +5,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import IconButton from '@mui/material/IconButton';
 import {styled} from '@mui/system';
-import {USER_ROUTE} from '../../util/consts';
+import {CHAT_ROUTE, FEED_ROUTE, USER_ROUTE} from '../../util/consts';
 import HomeIcon from '@mui/icons-material/Home';
 import {useNavigate} from 'react-router-dom';
 import {Context} from '../../index';
@@ -36,6 +36,9 @@ const ChatAppBar = () => {
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                     <ButtonIcon
+                        onClick={() =>
+                            notification.remove().then(navigate(CHAT_ROUTE))
+                    }
                         sx={{backgroundColor: theme.palette.primary.main,
                             color: theme.palette.common.white,
                             mr:2
@@ -45,6 +48,7 @@ const ChatAppBar = () => {
                         </Badge>
                     </ButtonIcon>
                     <ButtonIcon
+                        onClick={() => navigate(FEED_ROUTE)}
                         aria-label="show 4 new mails"
                         sx={{backgroundColor: theme.palette.primary.main,
                             color: theme.palette.common.white,
