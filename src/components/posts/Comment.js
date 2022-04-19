@@ -7,14 +7,18 @@ import {Divider, ListItem, ListItemAvatar, ListItemText} from '@mui/material';
 import ItemMenuComment from './ItemMenuComment';
 import {Context} from '../../index';
 import {USER_ROUTE} from '../../util/consts';
+import ListItemButton from '@mui/material/ListItemButton';
+import {useNavigate} from 'react-router-dom';
 
 const Comment = ({comment, postComments}) => {
     const {user} = useContext(Context)
+    const navigate = useNavigate()
+
 
     return (
         <>
         <ListItem alignItems="flex-start">
-            <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
+            <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + comment.userId._id)} >
 
             <ListItemAvatar>
                 <Avatar src={process.env.REACT_APP_API_URL + comment.userId.profilePicture}/>
