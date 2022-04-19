@@ -9,6 +9,8 @@ import {Context} from '../../index';
 import {USER_ROUTE} from '../../util/consts';
 import ListItemButton from '@mui/material/ListItemButton';
 import {useNavigate} from 'react-router-dom';
+import {grey} from '@mui/material/colors';
+import theme from '../../theme';
 
 const Comment = ({comment, postComments}) => {
     const {user} = useContext(Context)
@@ -18,7 +20,10 @@ const Comment = ({comment, postComments}) => {
     return (
         <>
         <ListItem alignItems="flex-start">
-            <ListItemButton onClick={() => navigate(USER_ROUTE +'/' + comment.userId._id)} >
+            <ListItemButton
+                sx={{'&:hover': {
+                        backgroundColor: theme.palette.common.white}}}
+                onClick={() => navigate(USER_ROUTE +'/' + comment.userId._id)} >
 
             <ListItemAvatar>
                 <Avatar src={process.env.REACT_APP_API_URL + comment.userId.profilePicture}/>
