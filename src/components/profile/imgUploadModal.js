@@ -31,11 +31,12 @@ export default function ImgUploadModal() {
 
     const [file, setFile] = useState(null)
     const selectFile = (e) => {
+        setFile(e.target.files[0])
+
         const imageURL = file.toDataURL('image/jpeg')
         const convertedURLtoFile = dataURLtoFile(imageURL, 'image.jpeg')
         console.log(imageURL)
         console.log(convertedURLtoFile)
-        setFile(e.target.files[0])
     }
     const {id} = useParams()
     const addImage = ()=>{
