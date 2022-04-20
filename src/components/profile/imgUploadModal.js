@@ -37,7 +37,7 @@ export default function ImgUploadModal() {
     }
     const {id} = useParams()
     const addImage = async ()=>{
-        const imageURL = file.toDataURL ('image/jpeg')
+        const imageURL = file.toDataURL ()
         const convertedURLtoFile = await dataURLtoFile(imageURL, 'image.jpeg')
         console.log(imageURL)
         console.log(convertedURLtoFile)
