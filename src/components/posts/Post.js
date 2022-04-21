@@ -54,7 +54,7 @@ const Post = ({post}) => {
                 <CardMedia
                     component="img"
                     height="400"
-                    image={process.env.REACT_APP_API_URL + post.img}
+                    image={`${process.env.REACT_APP_API_URL}api/user/image/${post.img}`}
                     alt="img"
                 />
                 :

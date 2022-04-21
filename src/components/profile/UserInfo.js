@@ -60,16 +60,12 @@ const UserInfo = observer (() => {
                         {!currentUser.currentUser.profilePicture?
                             <CircularProgress />
                             :
-
                             <Avatar
                                 src={`${process.env.REACT_APP_API_URL}api/user/image/${currentUser.currentUser.profilePicture}`}
-                                sx={{height: 135, width: 135}}
-                            />
+                                sx={{height: 135, width: 135}}/>
                         }
-
                     </Box>
                     <ImgUploadModal/>
-
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Box sx={{ml:3}}>
