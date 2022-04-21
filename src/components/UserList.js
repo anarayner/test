@@ -30,7 +30,7 @@ const UserList = observer(()=> {
                             <ListItemAvatar>
                                 <Avatar
                                     alt={`Avatar`}
-                                    src={process.env.REACT_APP_API_URL + user.profilePicture}
+                                    src={`${process.env.REACT_APP_API_URL}api/user/image/${user.profilePicture}`}
                                 />
                             </ListItemAvatar>
                             <Typography variant="body2" color="text.secondary">

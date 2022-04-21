@@ -33,7 +33,8 @@ const Post = ({post}) => {
                                         color: theme.palette.common.white,
                                         backgroundColor: theme.palette.common.white}}}
                                 onClick={() => navigate(USER_ROUTE +'/' + post.userId._id)} >
-                            <Avatar src={process.env.REACT_APP_API_URL + post.userId.profilePicture}/>
+                            <Avatar src={`${process.env.REACT_APP_API_URL}api/user/image/${post.userId.profilePicture}`}
+                            />
                             </ListItemButton>
                         }
                         title={post.userId.username}

@@ -8,7 +8,7 @@ const UserMessage = ({message}) => {
         <Box display="flex" justifyContent="flex-end" >
             <Avatar
                 alt={`Avatar`}
-                src={process.env.REACT_APP_API_URL + message.sender.profilePicture}
+                src={`${process.env.REACT_APP_API_URL}api/user/image/${message.sender.profilePicture}`}
             />
             <Paper
                 key={message._id}

@@ -28,7 +28,8 @@ const Comment = ({comment, postComments}) => {
                 onClick={() => navigate(USER_ROUTE +'/' + comment.userId._id)} >
 
             <ListItemAvatar>
-                <Avatar src={process.env.REACT_APP_API_URL + comment.userId.profilePicture}/>
+                <Avatar src={`${process.env.REACT_APP_API_URL}api/user/image/${comment.userId.profilePicture}`}
+                />
             </ListItemAvatar>
             </ListItemButton>
             <ListItemText

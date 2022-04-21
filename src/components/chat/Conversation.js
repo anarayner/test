@@ -24,7 +24,7 @@ const Conversation = ({conversation}) => {
                             <ListItemAvatar>
                                 <Avatar
                                     alt={`Avatar`}
-                                    src={process.env.REACT_APP_API_URL + member[0].profilePicture}
+                                    src={`${process.env.REACT_APP_API_URL}api/user/image/${member[0].profilePicture}`}
                                 />
                             </ListItemAvatar>
                             <ListItemText primary={member[0].username}
