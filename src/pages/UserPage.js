@@ -41,10 +41,6 @@ const UserPage = observer(() => {
                        {/* Posts */}
                        <Grid item xs={12} md={9} lg={9} >
                            <UserInfo />
-
-                           <CreatePostButton/>
-
-
                            {user.user.id === id?
                            <CreatePostButton/>
                                :
