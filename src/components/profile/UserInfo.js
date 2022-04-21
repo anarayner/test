@@ -62,7 +62,7 @@ const UserInfo = observer (() => {
                             :
 
                             <Avatar
-                                src={process.env.REACT_APP_API_URL + currentUser.currentUser.profilePicture}
+                                src={`${process.env.REACT_APP_API_URL}/image/${currentUser.currentUser.profilePicture}`}
                                 sx={{height: 135, width: 135}}
                             />
                         }
