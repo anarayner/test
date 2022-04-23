@@ -19,7 +19,6 @@ const Post = ({post}) => {
     const {user} = useContext(Context)
     const navigate = useNavigate()
 
-    console.log(post)
     return (
         <Card sx={{borderRadius: 2, mt: 2}}>
             <Grid container spacing={2} direction='row'  >
