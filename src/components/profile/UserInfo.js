@@ -65,7 +65,10 @@ const UserInfo = observer (() => {
                                 sx={{height: 135, width: 135}}/>
                         }
                     </Box>
-                    <ImgUploadModal/>
+                    {user.user.id === id?
+                        <ImgUploadModal/>
+                        :
+                        <></>}
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Box sx={{ml:3}}>
@@ -77,7 +80,7 @@ const UserInfo = observer (() => {
                         <Typography variant="body2"  >
                             {currentUser.currentUser.city}
                         </Typography>
-                        <Typography variant="body2"  >
+                        <Typography variant="body2">
                             {currentUser.currentUser.work}
                         </Typography>
                         <Typography variant="body2"  >
